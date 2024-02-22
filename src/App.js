@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import InputLinks from './components/InputLinks';
+import LinkList from './components/ListLinks';
+import IframeRenderer from './components/IframeRenderer';
+import { useSelector } from 'react-redux';
 
-function App() {
+const App = () => {
+  // Lấy link từ Redux store
+  const link = useSelector((state) => state.links[0]); // Giả sử link được lưu trữ trong mảng links và lấy link đầu tiên
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <InputLinks />
+      <LinkList />
+      {/* Truyền link vào IframeRenderer */}
+      <IframeRenderer link={link} />
     </div>
   );
-}
+};
 
 export default App;
