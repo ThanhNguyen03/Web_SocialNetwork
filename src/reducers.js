@@ -9,7 +9,10 @@ const reducer = (state = initialState, action) => {
     case ADD_LINK:
       return {
         ...state,
-        links: [...state.links, action.payload],
+        links: [
+          ...state.links,
+          {link: action.payload, time: action.time},
+        ],
       };
     case REMOVE_LINK:
       return {

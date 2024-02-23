@@ -4,7 +4,8 @@ export const REMOVE_LINK = 'REMOVE_LINK';
 export const addLink = (link, time) => {
   return {
     type: ADD_LINK,
-    payload: link
+    payload: link,
+    time: time
   };
 };
 
@@ -49,12 +50,12 @@ export const embedLink = (inputValue) => {
 
 export const typeLink = (link) => {
   let type;
-  if (link.includes('youtube.com')) {
-    type = {link: link, type: 'youtube'};
+  if (link.link.includes('youtube.com')) {
+    type = {link: link.link, type: 'youtube'};
   } else if (link.includes('tiktok.com')) {
-    type = {link: link, type: 'tiktok'};
+    type = {link: link.link, type: 'tiktok'};
   } else {
-    type = {link: link, type: 'instagram'};
+    type = {link: link.link, type: 'instagram'};
   }
   return type;
 }
