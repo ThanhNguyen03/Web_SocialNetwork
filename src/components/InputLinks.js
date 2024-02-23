@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addLink, validateLink, embedLink } from '../actions';
+import { addLink, validateLink, embedLink } from '../redux/actions';
 
 import '../style/style.css';
 

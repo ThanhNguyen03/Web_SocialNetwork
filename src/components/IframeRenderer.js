@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { typeLink } from '../actions';
+import { typeLink } from '../redux/actions';
 
 const IframeRenderer = () => {
   const links = useSelector((state) => state.links);
